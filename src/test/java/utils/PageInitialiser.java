@@ -2,6 +2,9 @@ package utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pages.AddEmployeePage;
+import pages.LoginPage;
+import pages.SearchEmployeePage;
 
 public class PageInitialiser {
 
@@ -12,7 +15,7 @@ public class PageInitialiser {
     public static void initializePageObjects(){
         loginPage = new LoginPage();
         addEmployeePage = new AddEmployeePage();
-        searchEmployeePage = new SearchEmployePage();
+        searchEmployeePage = new SearchEmployeePage();
 
     }
 }
