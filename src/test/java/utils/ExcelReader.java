@@ -7,6 +7,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +29,27 @@ public class ExcelReader {
             //A loop to go through all the rows
             for (int i = 1; i < noOfActualRowsWithData; i++) {
                 //Getting each row one by one from the map
+                Row currentRow = sheet.getRow(i);
+                //A new map for every row
+                Map<String,String> rowMap = new LinkedHashMap<>();
+                //The Actual number of cells that contains the data in each row
+                int noOfActualCellsWithData = currentRow.getPhysicalNumberOfCells();
+                //A loop to go through all the cells
+                for (int j = 0; j < noOfActualCellsWithData; j++) {
+                    //From Header, we get the keys
+                    String key = headerRow.getCell(j).toString();
+                    //From current row we get the values
+                    String value = currentRow.getCell(j).toString();
+                    //store these keys and values in the map
+                    rowMap.put(key,value);
+
+                }
+                //Store each map in the list
+                excelData.add(rowMap);
             }
+        }catch (IOException e){
+            e.printStackTrace();
         }
+        return excelData;
     }
 }
