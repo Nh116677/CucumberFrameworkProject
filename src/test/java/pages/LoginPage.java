@@ -15,10 +15,15 @@ public class LoginPage extends CommonMethods {
     @FindBy(id = "btnLogin")
     public WebElement loginButton;
 
-    @FindBy(id = "")
+
 
     @FindBy(id="welcome")
     public WebElement welcomeMessageLoc;
+
+    public void clearUserName(){
+        usernameField.clear();
+    }
+
 
     public LoginPage(){
         PageFactory.initElements(driver, this);
