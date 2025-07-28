@@ -15,6 +15,7 @@ Feature: Add employee scenarios
     And user clicks on save button
     Then employee is added successfully
 
+  @employeeID
   Scenario: Adding employee unique employee ID
     And user enters firstname,  middlename, lastname and employee Id
     And user clicks on save button

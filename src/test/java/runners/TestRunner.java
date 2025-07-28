@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         //when we have to execute, we set the value to false
         dryRun = false
 
-        //tags =  "@employeeId"
+        //tags =  "@exceltable"
         //pretty plutruegin prints all the steps in console
        // plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json","rerun:target/failed.txt"}
 

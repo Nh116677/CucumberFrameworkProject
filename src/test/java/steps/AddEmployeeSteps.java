@@ -101,7 +101,6 @@ public class AddEmployeeSteps extends CommonMethods {
     @When("user enters multiple employees using excel file")
     public void user_enters_multiple_employees_using_excel_file() throws IOException {
 
-
         List<Map<String, String>> employeeNames = ExcelReader.read();
         for (Map<String, String> employee : employeeNames) {
             System.out.println(employee.get("firstName"));
